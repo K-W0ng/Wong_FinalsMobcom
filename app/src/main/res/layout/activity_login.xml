@@ -16,23 +16,24 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="273dp"
+            android:layout_height="300dp"
             android:background="@drawable/blue_bg">
+
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="75dp"
-                android:src="@drawable/logo"
-                android:contentDescription="@string/todo" />
+                android:layout_marginTop="40dp"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/logo" />
         </FrameLayout>
 <!--        For Email Layout-->
         <RelativeLayout
-            android:id="@+id/rlUser"
+            android:id="@+id/rlUserMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="62dp"
-            android:layout_marginTop="36.7dp"
+            android:layout_marginTop="60.7dp"
             android:layout_marginRight="62dp"
             android:background="@drawable/blue_border_rounded_cornwe">
 
@@ -103,21 +104,30 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginLeft="62dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="62dp"
-            android:background="@android:color/background_light"
+            android:background="@drawable/blue_fill__rounded_color"
             android:fontFamily="@font/poppins_medium"
-
             android:text="@string/login"
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="441dp" />
-    </LinearLayout>
 
+        <Button
+            android:id="@+id/btnSignUpLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center_horizontal"
+            android:paddingTop="15dp"
+            android:text="@string/btnSignUp"
+            android:textColor="@color/green_700" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

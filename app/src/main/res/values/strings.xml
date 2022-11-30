@@ -4,4 +4,13 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="slogan">Adding Moments of Styles</string>
+    <string name="proceed_to_login">Proceed to Login</string>
+    <string name="btnSignUp">Sign Up Now!</string>
+    <string name="emailExample">idnumber@gmail.com</string>
+    <string name="mobileNumber">Mobile Number</string>
+    <string name="exampleNumber">09153698874</string>
+    <string name="cPass">Confirm Password</string>
+    <string name="examplePass">********</string>
+    <string name="send">Send</string>
 </resources>
