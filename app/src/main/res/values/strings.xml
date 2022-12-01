@@ -20,4 +20,9 @@
     <string name="exampleLastName">Studio</string>
     <string name="myProfile">My Profile</string>
     <string name="schedule_an_event_now">Schedule an Event Now</string>
+    <string name="btnLogout">Logout</string>
+    <string name="to_email">To:</string>
+    <string name="event">Event</string>
+    <string name="home">Home</string>
+    <string name="from_email">From:</string>
 </resources>

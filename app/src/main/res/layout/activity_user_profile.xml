@@ -1,148 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blue_bg"
-    tools:context=".UserProfileActivity">
+    android:fillViewport="true">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgBackProfile"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/peach"
-        tools:ignore="ImageContrastCheck" />
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-    <TextView
-        android:id="@+id/lblProfile"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:fontFamily="@font/poppins_regular"
-        android:gravity="center"
-        android:text="@string/myProfile"
-        android:textColor="@color/peach"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgBackProfile"
-        app:layout_constraintTop_toTopOf="@+id/imgBackProfile"
-        tools:ignore="TextContrastCheck" />
+        tools:context=".UserProfileActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="155dp"
-        android:layout_height="155dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblProfile">
+
+        <TextView
+            android:id="@+id/lblProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="@string/myProfile"
+            android:textColor="@color/peach"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            app:cardCornerRadius="250dp">
+            android:id="@+id/cardView"
+            android:layout_width="155dp"
+            android:layout_height="155dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblProfile">
 
-            <ImageView
-                android:id="@+id/imgProfileProfile"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:contentDescription="@string/todo"
-                android:scaleType="centerCrop"
-                android:src="@drawable/userProfile" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:id="@+id/imgProfileProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user_profile" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="0dp"
+                    android:src="@drawable/ic_upload"
+                    app:layout_constraintEnd_toStartOf="@+id/imgProfileProfile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white"
+                    tools:layout_editor_absoluteY="50dp" />
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/exampleFirstName"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins_regular"
-        android:hint="@string/exampleFirstName"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        <TextView
+            android:id="@+id/tvlblEmailProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/email"
+            android:textColor="@color/peach"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/tvlblEmailProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/email"
-        android:textColor="@color/peach"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        <TextView
+            android:id="@+id/lblPhoneNumberProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/mobileNumber"
+            android:textColor="@color/peach"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="@+id/tvlblEmailProfile"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailProfile"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/lblPhoneNumberProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/mobileNumber"
-        android:textColor="@color/peach"
-        android:textSize="25sp"
-        app:layout_constraintStart_toStartOf="@+id/tvlblEmailProfile"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailProfile" />
+        <TextView
+            android:id="@+id/tvEmailProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/emailExample"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tvlblEmailProfile"
+            app:layout_constraintTop_toBottomOf="@+id/tvlblEmailProfile"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/tvEmailProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:hint="@string/emailExample"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tvlblEmailProfile"
-        app:layout_constraintTop_toBottomOf="@+id/tvlblEmailProfile" />
+        <TextView
+            android:id="@+id/tvNumberProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="@string/exampleNumber"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/tvEmailProfile"
+            app:layout_constraintTop_toBottomOf="@+id/lblPhoneNumberProfile"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/tvNumberProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:hint="@string/exampleNumber"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tvEmailProfile"
-        app:layout_constraintTop_toBottomOf="@+id/lblPhoneNumberProfile" />
+        <Button
+            android:id="@+id/btnScheduleProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/schedule_an_event_now"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumberProfile" />
 
-    <Button
-        android:id="@+id/btnScheduleProfile"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/schedule_an_event_now"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNumberProfile" />
-
-    <Button
-        android:id="@+id/btnLogoutProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="70dp"
-        android:text="Logout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnScheduleProfile" />
+        <Button
+            android:id="@+id/btnLogoutProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="108dp"
+            android:text="@string/btnLogout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnScheduleProfile"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
