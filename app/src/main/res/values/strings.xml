@@ -13,4 +13,11 @@
     <string name="cPass">Confirm Password</string>
     <string name="examplePass">********</string>
     <string name="send">Send</string>
+    <string name="btnRegister">Register</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="exampleFirstName">Android</string>
+    <string name="exampleLastName">Studio</string>
+    <string name="myProfile">My Profile</string>
+    <string name="schedule_an_event_now">Schedule an Event Now</string>
 </resources>

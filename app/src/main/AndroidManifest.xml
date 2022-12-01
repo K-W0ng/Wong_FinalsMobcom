@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Wong_FinalsMobcom"
         tools:targetApi="31">
         <activity
+            android:name=".EventScheduler"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".RegistrationActivity"
             android:exported="false">
             <meta-data

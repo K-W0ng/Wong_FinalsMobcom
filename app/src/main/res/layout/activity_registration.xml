@@ -52,7 +52,6 @@
         android:id="@+id/etEmailRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="50dp"
         android:autofillHints=""
         android:ems="10"
@@ -68,21 +67,20 @@
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="150dp"
-        android:fontFamily="@font/poppins_medium"
         android:text="@string/mobileNumber"
+        android:fontFamily="@font/poppins_medium"
         android:textColor="@color/green_700"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/etEmailRegister"
-        app:layout_constraintTop_toBottomOf="@+id/etEmailRegister" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <EditText
         android:id="@+id/etPhoneRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/exampleNumber"
@@ -97,7 +95,6 @@
         android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/password"
         android:textColor="@color/green_700"
@@ -110,7 +107,6 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/examplePass"
@@ -125,7 +121,6 @@
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/cPass"
         android:textColor="@color/green_700"
@@ -138,7 +133,6 @@
         android:id="@+id/editTextTextPassword2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/examplePass"
@@ -152,7 +146,7 @@
         android:id="@+id/btnLoginRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
@@ -167,12 +161,61 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="80dp"
-        android:text="@string/send"
+        android:layout_marginEnd="70dp"
+        android:text="@string/btnRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnLoginRegister"
         app:layout_constraintTop_toTopOf="@+id/btnLoginRegister" />
+
+    <TextView
+        android:id="@+id/lblFirstNameRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/firstName"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/green_700"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/etEmailRegister"
+        app:layout_constraintTop_toBottomOf="@+id/etEmailRegister" />
+
+    <TextView
+        android:id="@+id/lblLastNameRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:text="@string/lastName"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/green_700"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/lblFirstNameRegister"
+        app:layout_constraintTop_toTopOf="@+id/lblFirstNameRegister" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="8"
+        android:hint="@string/exampleFirstName"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="@+id/lblFirstNameRegister"
+        app:layout_constraintTop_toBottomOf="@+id/lblFirstNameRegister" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="8"
+        android:hint="@string/exampleLastName"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintStart_toStartOf="@+id/lblLastNameRegister"
+        app:layout_constraintTop_toBottomOf="@+id/lblLastNameRegister" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
