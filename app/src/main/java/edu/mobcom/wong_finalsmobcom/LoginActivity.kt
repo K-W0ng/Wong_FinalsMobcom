@@ -1,33 +1,64 @@
 package edu.mobcom.wong_finalsmobcom
 
-import android.annotation.SuppressLint
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import edu.mobcom.wong_finalsmobcom.databinding.ActivityLoginBinding
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
-    private  lateinit var btnSignUpLogin: Button
+class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var auth: FirebaseAuth
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+//        var username: TextView = findViewById(R.id.tvNameProfile)
 
-        btnSignUpLogin = findViewById(R.id.btnSignUpLogin)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        fun openRegisterActivity(){
-            val iRegistrationActivity = Intent(this, RegistrationActivity::class.java)
-            startActivity(iRegistrationActivity)
+        auth = Firebase.auth
+
+        binding.btnLogin.setOnClickListener {
+            val email = binding.etEmailLogin.text.toString()
+            val pass = binding.etPasswordLogin.text.toString()
+
+            if (checkEmpty(email, pass)) {
+                Toast.makeText(this, "Email and Password is required", Toast.LENGTH_SHORT).show()
+            } else {
+                //authenticate
+                auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
+
+                    if (it.isSuccessful) {
+                        Toast.makeText(this, "Welcome $email", Toast.LENGTH_SHORT).show()
+                        val i = Intent(this, HomeActivity::class.java)
+                        startActivity(i)
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Please use an existing account or register a new account",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        val i = Intent(this, LoginActivity::class.java)
+                        startActivity(i)
+                    }
+                }
+            }
         }
-
-        btnSignUpLogin.setOnClickListener {
-            openRegisterActivity()
+        binding.btnSignUpLogin.setOnClickListener {
+            val i = Intent(this, RegistrationActivity::class.java)
+            startActivity(i)
         }
     }
 
-    override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
+    private fun checkEmpty(email: String, pass: String): Boolean {
+        return email.isEmpty() || pass.isEmpty()
     }
+
 }

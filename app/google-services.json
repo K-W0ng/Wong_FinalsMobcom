@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "35490336653",
+    "project_id": "wong-finalsmobcom",
+    "storage_bucket": "wong-finalsmobcom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35490336653:android:b34268ca08325c0c7477c4",
+        "android_client_info": {
+          "package_name": "edu.mobcom.wong_finalsmobcom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35490336653-283mjfgtd1ufd49ejcm7i13ov1olnhs8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXhCZwNohKHW76nlNM_e405N9A5eqGoCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35490336653-283mjfgtd1ufd49ejcm7i13ov1olnhs8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

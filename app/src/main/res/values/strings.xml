@@ -25,4 +25,27 @@
     <string name="event">Event</string>
     <string name="home">Home</string>
     <string name="from_email">From:</string>
+    <!-- to toggle the open close button of the navigation drawer -->
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="add_event">Add Event</string>
+    <string name="calendar">Calendar</string>
+    <string name="calculator">Calculator</string>
+    <string name="my_profile">My Profile</string>
+    <string name="send_email">Send Email</string>
+    <string name="dial">Dial</string>
+    <string name="save">Save</string>
+    <string name="schedule_event">Schedule an Event</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="recipients">Recipients</string>
+    <string name="end_time">End Time</string>
+    <string name="end">End</string>
+    <string name="event_name">Event Name</string>
+    <string name="_1st_bag_show">1st Bag Show</string>
+    <string name="venue">Venue</string>
+    <string name="baguio">Baguio</string>
+    <string name="schedule">Schedule</string>
+    <string name="start_time">Start Time</string>
+    <string name="start">Start</string>
+    <string name="event_date">Event Date</string>
 </resources>

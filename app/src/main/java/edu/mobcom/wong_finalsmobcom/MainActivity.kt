@@ -6,28 +6,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import edu.mobcom.wong_finalsmobcom.databinding.ActivityLoginBinding
+import edu.mobcom.wong_finalsmobcom.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var proceedMain: Button
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        proceedMain = findViewById(R.id.btnProceed)
-
-        fun openLoginActivity(){
-            val iLoginActivity = Intent(this, LoginActivity::class.java)
-            startActivity(iLoginActivity)
-        }
-
-        proceedMain.setOnClickListener {
-            openLoginActivity()
+        binding.btnProceed.setOnClickListener {
+            val  i = Intent (this, LoginActivity::class.java)
+            startActivity(i)
         }
     }
 
-    override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
-    }
+
 }

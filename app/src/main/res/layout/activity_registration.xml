@@ -55,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <EditText
-            android:id="@+id/etToEmailSched"
+            android:id="@+id/etRecipientsEvent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
@@ -80,11 +80,11 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/etFirstRegister"
-            app:layout_constraintTop_toBottomOf="@+id/etFirstRegister" />
+            app:layout_constraintStart_toStartOf="@+id/etStartEvent"
+            app:layout_constraintTop_toBottomOf="@+id/etStartEvent" />
 
         <EditText
-            android:id="@+id/etPhoneRegister"
+            android:id="@+id/etEndEvent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -93,8 +93,8 @@
             android:inputType="phone"
             android:minHeight="48dp"
             android:textColorHint="#757575"
-            app:layout_constraintEnd_toEndOf="@+id/etToEmailSched"
-            app:layout_constraintStart_toStartOf="@+id/etToEmailSched"
+            app:layout_constraintEnd_toEndOf="@+id/etRecipientsEvent"
+            app:layout_constraintStart_toStartOf="@+id/etRecipientsEvent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
@@ -106,11 +106,11 @@
             android:textColor="@color/green_700"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="@+id/etPhoneRegister"
-            app:layout_constraintTop_toBottomOf="@+id/etPhoneRegister" />
+            app:layout_constraintStart_toStartOf="@+id/etEndEvent"
+            app:layout_constraintTop_toBottomOf="@+id/etEndEvent" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/etEventNameEvent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -118,7 +118,7 @@
             android:hint="@string/examplePass"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/etPhoneRegister"
+            app:layout_constraintEnd_toEndOf="@+id/etEndEvent"
             app:layout_constraintStart_toStartOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/textView3"
             tools:ignore="DuplicateSpeakableTextCheck" />
@@ -133,10 +133,10 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/textView3"
             app:layout_constraintStart_toStartOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/etEventNameEvent" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/etVenueEvent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:autofillHints=""
@@ -144,12 +144,12 @@
             android:hint="@string/examplePass"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+            app:layout_constraintEnd_toEndOf="@+id/etEventNameEvent"
             app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <Button
-            android:id="@+id/btnLoginRegister"
+            android:id="@+id/btnScheduleEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="70dp"
@@ -157,13 +157,13 @@
             android:layout_marginEnd="20dp"
             android:ems="5"
             android:text="@string/login"
-            app:layout_constraintEnd_toStartOf="@+id/btnRegisterRegister"
+            app:layout_constraintEnd_toStartOf="@+id/btnLogoutEvent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+            app:layout_constraintTop_toBottomOf="@+id/etVenueEvent" />
 
         <Button
-            android:id="@+id/btnRegisterRegister"
+            android:id="@+id/btnLogoutEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -172,8 +172,8 @@
             android:text="@string/btnRegister"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnLoginRegister"
-            app:layout_constraintTop_toTopOf="@+id/btnLoginRegister" />
+            app:layout_constraintStart_toEndOf="@+id/btnScheduleEvent"
+            app:layout_constraintTop_toTopOf="@+id/btnScheduleEvent" />
 
         <TextView
             android:id="@+id/lblFromEmailSchedule"
@@ -183,8 +183,8 @@
             android:text="@string/firstName"
             android:textColor="@color/green_700"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/etToEmailSched"
-            app:layout_constraintTop_toBottomOf="@+id/etToEmailSched" />
+            app:layout_constraintStart_toStartOf="@+id/etRecipientsEvent"
+            app:layout_constraintTop_toBottomOf="@+id/etRecipientsEvent" />
 
         <TextView
             android:id="@+id/lblLastNameRegister"
@@ -199,7 +199,7 @@
             app:layout_constraintTop_toTopOf="@+id/lblFromEmailSchedule" />
 
         <EditText
-            android:id="@+id/etFirstRegister"
+            android:id="@+id/etStartEvent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autofillHints=""

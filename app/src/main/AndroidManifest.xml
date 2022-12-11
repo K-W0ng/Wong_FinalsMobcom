@@ -13,29 +13,41 @@
         android:theme="@style/Theme.Wong_FinalsMobcom"
         tools:targetApi="31">
         <activity
-            android:name=".EventScheduler"
+            android:name=".HomeActivity"
+            android:label="@string/home"
             android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".EventScheduler"
+            android:exported="false"
+            android:label="@string/schedule_event">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".UserProfileActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="@string/update_profile">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".RegistrationActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="@string/btnRegister">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:exported="false">
+            android:exported="false"
+            android:label="@string/login">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
