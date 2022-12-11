@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -92,7 +91,7 @@
             android:textColor="@color/peach"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="@+id/tvFNameProfile"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmailProfile2"
+            app:layout_constraintTop_toBottomOf="@+id/etFNProfile"
             tools:ignore="TextContrastCheck" />
 
         <TextView
@@ -136,16 +135,18 @@
             android:textColor="@color/peach"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="@+id/tvlblEmailProfile"
-            app:layout_constraintTop_toBottomOf="@+id/tvEmailProfile"
+            app:layout_constraintTop_toBottomOf="@+id/etEmailProfile"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
 
         <EditText
-            android:id="@+id/tvEmailProfile"
+            android:id="@+id/etEmailProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/emailExample"
+            android:inputType="textEmailAddress"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/tvlblEmailProfile"
@@ -153,39 +154,45 @@
             tools:ignore="TextContrastCheck,TextContrastCheck" />
 
         <EditText
-            android:id="@+id/tvEmailProfile2"
+            android:id="@+id/etFNProfile"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/exampleFirstName"
+            android:inputType="textPersonName"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/tvFNameProfile"
             app:layout_constraintTop_toBottomOf="@+id/tvFNameProfile"
-            tools:ignore="TextContrastCheck,TextContrastCheck" />
+            tools:ignore="TextContrastCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         <EditText
-            android:id="@+id/tvEmailProfile3"
+            android:id="@+id/etLNProfile"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_marginStart="20dp"
+            android:autofillHints=""
             android:hint="@string/exampleLastName"
+            android:inputType="textPersonName"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/tvFNameProfile"
-            app:layout_constraintTop_toTopOf="@+id/tvEmailProfile2"
+            app:layout_constraintTop_toTopOf="@+id/etFNProfile"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
 
         <EditText
-            android:id="@+id/tvNumberProfile"
+            android:id="@+id/etNumberProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:autofillHints=""
             android:hint="@string/exampleNumber"
+            android:inputType="number"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/tvEmailProfile"
+            app:layout_constraintStart_toStartOf="@+id/etEmailProfile"
             app:layout_constraintTop_toBottomOf="@+id/lblPhoneNumberProfile"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
 
@@ -200,14 +207,14 @@
             app:layout_constraintEnd_toStartOf="@+id/btnView"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNumberProfile"
+            app:layout_constraintTop_toBottomOf="@+id/etNumberProfile"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
 
         <Button
             android:id="@+id/btnView"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:text="View"
+            android:text="@string/view"
             app:layout_constraintEnd_toStartOf="@+id/btnSaveProfile"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btnLogoutProfile"

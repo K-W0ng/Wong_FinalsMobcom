@@ -1,5 +1,6 @@
 package edu.mobcom.wong_finalsmobcom
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
@@ -22,19 +23,36 @@ import java.util.*
 class EventScheduler : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityEventSchedulerBinding
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_event_scheduler)
+
+
         binding = ActivityEventSchedulerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         auth = Firebase.auth
 
-        binding.etStartEvent.setOnClickListener{
-            openTimePicker(binding.etStartEvent)
+        binding.backEvent.setOnClickListener {
+            val i = Intent(this, HomeActivity::class.java)
+            startActivity(i)
         }
 
-        binding.etEndEvent.setOnClickListener {
-            openTimePicker(binding.etEndEvent)
+        binding.sTime.setOnClickListener{
+            openTimePicker(binding.sTime)
+        }
+
+        binding.eTime.setOnClickListener {
+            openTimePicker(binding.eTime)
+        }
+
+        binding.btnLogoutEvent.setOnClickListener {
+            Firebase.auth.signOut()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
 
         val calendar = Calendar.getInstance()
@@ -48,12 +66,12 @@ class EventScheduler : AppCompatActivity() {
             DatePickerDialog(this, datePicker, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show()
         }
         binding.btnScheduleEvent.setOnClickListener {
-            val recipients = binding.etRecipientsEvent.text.toString()
-            val eventName = binding.etEventNameEvent.text.toString()
-            val date = binding.tvDateEvent.text.toString()
-            val startTime = binding.etStartEvent.text.toString()
-            val endTime = binding.etEndEvent.text.toString()
-            val venue = binding.etVenueEvent.text.toString()
+            val recipients = binding.recipients.text.toString()
+            val eventName = binding.eventName.text.toString()
+            val date = binding.etEventDate.text.toString()
+            val startTime = binding.sTime.text.toString()
+            val endTime = binding.eTime.text.toString()
+            val venue = binding.venue.text.toString()
 
 
             if (checkEmpty(recipients, eventName, date, startTime, endTime, venue)) {
@@ -89,7 +107,7 @@ class EventScheduler : AppCompatActivity() {
         end: String,
         recipients: String
     ) {
-        val intent = Intent(Intent.ACTION_INSERT).apply {//Used for creating a new Calendar event
+        val i = Intent(Intent.ACTION_INSERT).apply {//Used for creating a new Calendar event
             data = CalendarContract.Events.CONTENT_URI
             putExtra(CalendarContract.Events.TITLE, title)
             putExtra(CalendarContract.Events.EVENT_LOCATION, location)
@@ -99,7 +117,7 @@ class EventScheduler : AppCompatActivity() {
             putExtra(Intent.EXTRA_EMAIL, arrayOf(recipients))
         }
         try {
-            startActivity(intent)
+            startActivity(i)
             Toast.makeText(applicationContext, "$title Saved", Toast.LENGTH_SHORT).show()
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(applicationContext, "Content error", Toast.LENGTH_LONG).show()
@@ -121,6 +139,7 @@ class EventScheduler : AppCompatActivity() {
         val sdf = SimpleDateFormat(myFormat, Locale.UK)
         binding.tvDateEvent.setText(sdf.format(myCalendar.time))
     }
+    @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.N)
     private fun openTimePicker(textE: EditText){
         val currentTime = Calendar.getInstance()

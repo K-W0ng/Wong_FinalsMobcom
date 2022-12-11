@@ -5,7 +5,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -18,8 +17,6 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        var username: TextView = findViewById(R.id.tvNameProfile)
-
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -29,24 +26,23 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.etEmailLogin.text.toString()
             val pass = binding.etPasswordLogin.text.toString()
 
+            //email and password validation
             if (checkEmpty(email, pass)) {
                 Toast.makeText(this, "Email and Password is required", Toast.LENGTH_SHORT).show()
             } else {
                 //authenticate
                 auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
-
                     if (it.isSuccessful) {
                         Toast.makeText(this, "Welcome $email", Toast.LENGTH_SHORT).show()
                         val i = Intent(this, HomeActivity::class.java)
+                        //pass data
+                        with(i) {
+                            val recEmail: EditText = findViewById(R.id.etEmailLogin)
+                            putExtra("Email", recEmail.text.toString())
+                        }
                         startActivity(i)
                     } else {
-                        Toast.makeText(
-                            this,
-                            "Please use an existing account or register a new account",
-                            Toast.LENGTH_LONG
-                        ).show()
-                        val i = Intent(this, LoginActivity::class.java)
-                        startActivity(i)
+                        Toast.makeText(this, "Please use an existing account or register a new account", Toast.LENGTH_LONG).show()
                     }
                 }
             }
@@ -57,8 +53,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    //validation function for empty string
     private fun checkEmpty(email: String, pass: String): Boolean {
-        return email.isEmpty() || pass.isEmpty()
+        return email.isBlank() || pass.isBlank()
     }
 
 }

@@ -27,7 +27,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
                 android:contentDescription="@string/todo"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                tools:ignore="ImageContrastCheck" />
         </FrameLayout>
 <!--        For Email Layout-->
         <RelativeLayout
@@ -44,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/iconEmail"
+                android:autofillHints=""
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_medium"
                 android:hint="@string/email"
@@ -54,8 +56,7 @@
                 android:paddingBottom="15dp"
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:textSize="12sp"
-                android:autofillHints=""
-                tools:ignore="RtlSymmetry" />
+                tools:ignore="RtlSymmetry,TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/iconEmail"
@@ -81,18 +82,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/iconPassword"
+                android:autofillHints=""
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_medium"
                 android:hint="@string/password"
-                android:inputType="textEmailAddress"
+                android:inputType="textPassword"
                 android:maxLines="1"
                 android:paddingStart="20dp"
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:textSize="12sp"
-                android:autofillHints=""
-                tools:ignore="RtlSymmetry,TextFields" />
+                tools:ignore="RtlSymmetry,TextFields,TextContrastCheck" />
 
             <ImageView
                 android:id="@+id/iconPassword"
